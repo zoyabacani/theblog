@@ -136,6 +136,7 @@ nav a:hover {
 
 .intro p {
     font-size: 25px;
+    letter-spacing: 1px;
     color: var(--white);
     line-height: 1.8;
     max-width: 700px;
