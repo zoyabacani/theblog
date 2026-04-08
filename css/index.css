@@ -316,3 +316,15 @@ nav a:hover {
     color: var(--pink);
     background: rgba(232, 25, 125, 0.06);
 }
+
+/*FOOTER*/
+
+.site-footer {
+    background: var(--blue);
+    color: var(--white);
+    font-family: var(--font-ui);
+    font-size: 16px;
+    text-align: center;
+    padding: 24px 20px;
+    letter-spacing: 0.05em;
+}
