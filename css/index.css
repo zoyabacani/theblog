@@ -90,6 +90,7 @@ nav a:hover {
     align-items: center;
     padding: 60px 36px;
     position: relative;
+    overflow: hidden;
 }
 
 .hero-title {
@@ -118,6 +119,31 @@ nav a:hover {
     text-align: right;
 }
 
+
+.disco {
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    top: -130px;
+    z-index: 1;
+    animation: fall-bounce linear infinite;
+}
+
+.disco1 { left: 10%; animation-duration: 4s;   animation-delay: 0.0s; }
+.disco2 { left: 25%; animation-duration: 5s;   animation-delay: 0.6s; }
+.disco3 { left: 50%; animation-duration: 4.5s; animation-delay: 0.2s; }
+.disco4 { left: 70%; animation-duration: 5.5s; animation-delay: 0.9s; }
+.disco5 { left: 85%; animation-duration: 4.2s; animation-delay: 0.3s; }
+
+@keyframes fall-bounce {
+    0%   { transform: translateY(0px);    animation-timing-function: ease-in; }
+    55%  { transform: translateY(100vh);  animation-timing-function: ease-out; }
+    70%  { transform: translateY(80vh);   animation-timing-function: ease-in; }
+    82%  { transform: translateY(100vh);  animation-timing-function: ease-out; }
+    91%  { transform: translateY(90vh);   animation-timing-function: ease-in; }
+    97%  { transform: translateY(100vh);  animation-timing-function: ease-out; }
+    100% { transform: translateY(100vh); }
+}
 
 
 /*INTRO*/
