@@ -156,29 +156,30 @@ nav a:hover { color: var(--pink); }
 /* BODY BOX */
 .body-box {
     margin: 5px 25px 45px;
-    border: 2px solid var(--pink);
-    padding: 40px;
+    padding: 50px 60px;
     display: flex;
-    flex-direction: column;
-    gap: 24px;
+    flex-direction: row;
+    gap: 60px;
+    align-items: flex-start;
 }
  
 .body-box p {
     font-family: var(--font-ui);
-    font-size: 20px;
+    font-size: 19px;
     color: var(--black);
     line-height: 1.9;
+    text-indent: 2em;
 }
  
 /* SONGS */
 .songs {
     padding: 20px 40px 80px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     gap: 30px;
     justify-content: space-evenly;
-    align-items: flex-start;
+    align-items: center;
 }
  
 .songs-heading {
@@ -200,8 +201,8 @@ nav a:hover { color: var(--pink); }
 }
  
 .song-img {
-    width: 170px;
-    height: 170px;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
     flex-shrink: 0;
     transition: transform 0.3s ease;
@@ -209,21 +210,23 @@ nav a:hover { color: var(--pink); }
  
 .song-img:hover {
     transform: scale(1.15);
+    filter: drop-shadow(0px 8px 15px #f10b76);
 }
  
 .song-info {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    text-align: center;
+    text-align: left;
 }
  
 .song-title {
     font-family: var(--font-display);
     font-size: 25px;
-    color: var(--blue);
+    color: var(--pink);
     font-weight: normal;
-    text-align: center;
+    text-align: left;
+    padding: 30px 0 0;
 }
  
 .song-info p {
@@ -232,7 +235,30 @@ nav a:hover { color: var(--pink); }
     color: var(--black);
     line-height: 1.8;
     max-width: 250px;
-    text-align: center;
+    text-align: left;
+}
+
+.song-items-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+    align-items: flex-start;
+}
+ 
+.song-items-wrapper .song-item:first-child {
+    margin-right: 50px;
+}
+ 
+.song-items-wrapper .song-item:last-child {
+    margin-left: 50px;
+}
+ 
+.hover-note {
+    font-family: var(--font-ui);
+    font-size: 28px;
+    color: var(--black);
+    margin-top: -20px;
 }
  
 /* RESPONSIVE */
