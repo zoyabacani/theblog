@@ -29,12 +29,10 @@
             <p>Hi, I'm Zoya and I love house music! I'm always listening to house especially
                 when I need to focus, study, or get into a creative flow. My goal with this blog
                 is to show that you can be productive and still happy.</p>
- 
             <p>Sometimes we all hit a wall like writers block, endless distractions, or just
                 struggling to concentrate. That's where a good house track comes in. It's the
                 perfect way to procrastinate productively, helping you lock in, spark new
                 ideas, and keep the momentum going.</p>
- 
             <p>Whether it's a hypnotic groove, melodic rhythm, or a pulsing beat, the right
                 track can turn a tough session into something enjoyable. Think of this space
                 as a place to discover music that keeps you moving, focused, and inspired;
@@ -47,10 +45,17 @@
         </div>
     </section>
  
-    <!-- PHOTO GALLERY -->
+    <!-- DISCO BALL DIVIDER — pure CSS bouncing -->
+    <div class="disco-divider">
+        <div class="disco-ball ball-1"><img src="../img/disco_ball.png" alt=""></div>
+        <div class="disco-ball ball-2"><img src="../img/disco_ball.png" alt=""></div>
+        <div class="disco-ball ball-3"><img src="../img/disco_ball.png" alt=""></div>
+        <div class="disco-ball ball-4"><img src="../img/disco_ball.png" alt=""></div>
+    </div>
+ 
+    <!--PHOTO GALLERY-->
     <section class="gallery">
         <h2 class="gallery-heading">Here are some pictures I've taken at my favorite dj sets that I've been to</h2>
- 
         <div class="gallery-grid">
             <div class="gallery-item">
                 <img src="img_about/about_img_one.jpg" alt="DJ set photo" class="lightbox-trigger" data-index="0">
@@ -79,7 +84,7 @@
         </div>
     </section>
  
-    <!-- LIGHTBOX OVERLAY -->
+    <!--LIGHTBOX OVERLAY-->
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" id="lightbox-close">&times;</button>
         <button class="lightbox-prev" id="lightbox-prev">&#8249;</button>
@@ -88,7 +93,7 @@
         <div class="lightbox-counter" id="lightbox-counter"></div>
     </div>
  
-    <!-- FOOTER -->
+    <!--FOOTER-->
     <footer class="site-footer">
         <p>&copy; 2025 Zoya. All rights reserved.</p>
     </footer>
@@ -100,7 +105,6 @@
         const lightboxPrev = document.getElementById('lightbox-prev');
         const lightboxNext = document.getElementById('lightbox-next');
         const lightboxCounter = document.getElementById('lightbox-counter');
- 
         const images = Array.from(document.querySelectorAll('.lightbox-trigger'));
         let currentIndex = 0;
  
@@ -111,56 +115,38 @@
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
- 
         function closeLightbox() {
             lightbox.classList.remove('active');
             document.body.style.overflow = '';
         }
- 
         function showPrev() {
             currentIndex = (currentIndex - 1 + images.length) % images.length;
             lightboxImg.src = images[currentIndex].src;
             lightboxCounter.textContent = (currentIndex + 1) + ' / ' + images.length;
         }
- 
         function showNext() {
             currentIndex = (currentIndex + 1) % images.length;
             lightboxImg.src = images[currentIndex].src;
             lightboxCounter.textContent = (currentIndex + 1) + ' / ' + images.length;
         }
- 
-        images.forEach((img) => {
-            img.addEventListener('click', () => openLightbox(parseInt(img.dataset.index)));
-        });
- 
+        images.forEach(img => img.addEventListener('click', () => openLightbox(parseInt(img.dataset.index))));
         lightboxClose.addEventListener('click', closeLightbox);
         lightboxPrev.addEventListener('click', showPrev);
         lightboxNext.addEventListener('click', showNext);
- 
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox || e.target === lightboxImg) closeLightbox();
-        });
- 
-        document.addEventListener('keydown', (e) => {
+        lightbox.addEventListener('click', e => { if (e.target === lightbox || e.target === lightboxImg) closeLightbox(); });
+        document.addEventListener('keydown', e => {
             if (!lightbox.classList.contains('active')) return;
             if (e.key === 'Escape') closeLightbox();
             if (e.key === 'ArrowLeft') showPrev();
             if (e.key === 'ArrowRight') showNext();
         });
- 
-        /* touch/swipe support */
         let touchStartX = 0;
-        lightbox.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-        lightbox.addEventListener('touchend', (e) => {
+        lightbox.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; });
+        lightbox.addEventListener('touchend', e => {
             const diff = touchStartX - e.changedTouches[0].screenX;
-            if (Math.abs(diff) > 40) {
-                diff > 0 ? showNext() : showPrev();
-            }
+            if (Math.abs(diff) > 40) diff > 0 ? showNext() : showPrev();
         });
     </script>
  
 </body>
- 
 </html>
