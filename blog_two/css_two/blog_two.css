@@ -17,13 +17,17 @@
     --font-ui: 'Coolvetica', 'Arial Narrow', sans-serif;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     background: var(--white);
@@ -32,7 +36,10 @@ body {
     overflow-x: hidden;
 }
 
-a { text-decoration: none; color: inherit; }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
 /*NAV*/
 nav {
@@ -56,7 +63,9 @@ nav a {
     transition: color 0.2s;
 }
 
-nav a:hover { color: var(--pink); }
+nav a:hover {
+    color: var(--pink);
+}
 
 /*DROPDOWN*/
 .nav-dropdown {
@@ -64,7 +73,7 @@ nav a:hover { color: var(--pink); }
     display: inline-block;
 }
 
-.nav-dropdown > a {
+.nav-dropdown>a {
     font-family: var(--font-ui);
     font-size: 30px;
     color: var(--white);
@@ -72,7 +81,9 @@ nav a:hover { color: var(--pink); }
     transition: color 0.2s;
 }
 
-.nav-dropdown:hover > a { color: var(--pink); }
+.nav-dropdown:hover>a {
+    color: var(--pink);
+}
 
 .nav-dropdown .dropdown-menu {
     z-index: 200;
@@ -246,15 +257,15 @@ nav a:hover { color: var(--pink); }
     justify-content: center;
     align-items: flex-start;
 }
- 
+
 .song-items-wrapper .song-item:first-child {
     margin-right: 50px;
 }
- 
+
 .song-items-wrapper .song-item:last-child {
     margin-left: 50px;
 }
- 
+
 .hover-note {
     font-family: var(--font-ui);
     font-size: 28px;
@@ -264,14 +275,26 @@ nav a:hover { color: var(--pink); }
 
 /*RESPONSIVE*/
 @media (max-width: 600px) {
-    .hero { padding: 28px; min-height: 30vh; }
-    .body-box { margin: 16px; padding: 24px; }
+    .hero {
+        padding: 28px;
+        min-height: 30vh;
+    }
+
+    .body-box {
+        margin: 16px;
+        padding: 24px;
+    }
+
     .songs {
         flex-direction: column;
         align-items: center;
         padding: 20px 16px 60px;
     }
-    .song-img { width: 170px; height: 170px; }
+
+    .song-img {
+        width: 170px;
+        height: 170px;
+    }
 }
 
 /*FOOTER*/

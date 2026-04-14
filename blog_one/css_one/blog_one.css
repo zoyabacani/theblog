@@ -74,7 +74,7 @@ nav a:hover {
     display: inline-block;
 }
 
-.nav-dropdown > a {
+.nav-dropdown>a {
     font-family: var(--font-ui);
     font-size: 30px;
     color: var(--white);
@@ -82,7 +82,9 @@ nav a:hover {
     transition: color 0.2s;
 }
 
-.nav-dropdown:hover > a { color: var(--pink); }
+.nav-dropdown:hover>a {
+    color: var(--pink);
+}
 
 .nav-dropdown .dropdown-menu {
     z-index: 200;
@@ -272,6 +274,7 @@ nav a:hover {
 .song-items-wrapper .song-item:last-child {
     margin-left: 50px;
 }
+
 .hover-note {
     font-family: var(--font-ui);
     font-size: 28px;
