@@ -90,7 +90,7 @@ nav a:hover {
     position: absolute;
     top: 100%;
     left: 50%;
-    transform: translateX(-50%) translateY(-6px);
+    transform: translateX(-50%);
     background: var(--white);
     border: 2px solid var(--pink);
     padding: 6px;
@@ -98,13 +98,13 @@ nav a:hover {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s, transform 0.2s;
-    margin-top: -4px;
+    margin-top: 0;
 }
 
 .nav-dropdown:hover .dropdown-menu {
     opacity: 1;
     pointer-events: all;
-    transform: translateX(-50%) translateY(6px);
+    transform: translateX(-50%);
 }
 
 .nav-dropdown .dropdown-menu a {
